@@ -14,7 +14,7 @@ feature 'user signs in', %Q{
   scenario 'an existing user specifies a valid email and password' do
     user = FactoryGirl.create(:user)
     visit unauthenticated_root_path
-    click_link 'Sign In'
+    click_link 'Log In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log In'
@@ -26,7 +26,7 @@ feature 'user signs in', %Q{
 
   scenario 'a nonexistant email and password is supplied' do
     visit unauthenticated_root_path
-    click_link 'Sign In'
+    click_link 'Log In'
     fill_in 'Email', with: "nobody@gggg.com"
     fill_in 'Password', with: "password"
     click_button 'Log In'
@@ -40,7 +40,7 @@ feature 'user signs in', %Q{
   scenario 'a existing email with the wrong password is denied access' do
     user = FactoryGirl.create(:user)
     visit unauthenticated_root_path
-    click_link 'Sign In'
+    click_link 'Log In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: "not_password"
     click_button 'Log In'
@@ -59,7 +59,7 @@ feature 'user signs in', %Q{
 
 
     expect(page).to have_content('Sign Out')
-    expect(page).to_not have_content('Sign In')
+    expect(page).to_not have_content('Log In')
 
     visit new_user_session_path
     expect(page).to have_content('You are already signed in')
