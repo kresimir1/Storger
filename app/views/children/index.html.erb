@@ -1,0 +1,18 @@
+
+<h3><%=@user.first_name%> <%=@user.last_name%></h3>
+
+<div class="children">
+  <p>Children:</p>
+  <% unless @children.nil? %>
+    <% @children.each do |child| %>
+    <ul>
+      <li><p><%=link_to child.first_name + " " + child.last_name, child%></p>
+          <p>Date Of Birth: <%= child.dob %></p>
+          <p>Gender: <%= child.gender %></p>
+      </li>
+    </ul>
+    <% end %>
+  <% end %>
+  <%= link_to 'Add a Storgie',  new_child_path %>
+
+</div>

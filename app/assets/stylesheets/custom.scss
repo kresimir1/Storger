@@ -1,17 +1,70 @@
 
-#homepage1 { color: white;
-   position: relative;
-     top: 15%;
-
+#homepage1 {
+  color: white;
+  position: relative;
+  top: 15%;
+  padding-top: 10%;
 }
-.form-inputs label {
+#homepage1 label{
      color: white;
 }
 
+#homepage1 input{
+  border-radius: 10px;
+}
 abbr[title="required"] {
   display: none;
 }
 
 input[type="submit"].button {
   border-radius: 3px;
+}
+
+
+
+body#background {
+  background-image: url("storger.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-indent: 5px;
+}
+
+.background-text {
+  padding-left: 2%;
+}
+
+
+
+.options{
+  width:15%;
+  height:30%;
+  text-align: center;
+  font-size: 150%;
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 2%;
+  border-radius: 150px;
+}
+.lower {
+  padding: 30px;
+
+}
+.style_logo{
+  width:20%;
+  border: 1px solid #82AAD3;
+  border-radius: 3px;
+}
+.title-bar-left{
+  padding-left: 2%;
+}
+.title-bar-right{
+  padding-right: 5%;
+}
+
+#growth-chart {
+    position: fixed;
+    bottom: 22%;
+    right: 0;
+    height: 30%;
 }

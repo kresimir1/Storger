@@ -1,2 +1,28 @@
-<h1>Profile Page<h1>
-<p>Welcome <%=@user.first_name%></p>
+<h1>Profile Page</h1>
+<h3><%=@user.first_name%> <%=@user.last_name%></h3>
+
+<div class="options">
+  <%= link_to children_path do %>Children
+    <%= image_tag("options.png")%>
+  <% end %>
+ </div>
+ <div class="options lower">
+   <%= link_to children_path do %>Immunization Scheduler
+     <%= image_tag("calendar.png")%>
+   <% end %>
+ </div>
+ <div class="options">
+   <%= link_to children_path do %>Chatroom
+     <%= image_tag("options.png")%>
+   <% end %>
+ </div>
+ <div class="options lower">
+   <%= link_to children_path do %>First Words
+     <%= image_tag("words.jpg")%>
+   <% end %>
+ </div>
+ <div class="options" id="growth-chart">
+   <%= link_to children_path do %>Growth Chart
+     <%= image_tag("growthchart.png")%>
+   <% end %>
+ </div>

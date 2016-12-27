@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+#
 user_attributes =
 [{
    first_name: 'Admin',
@@ -26,4 +26,15 @@ user_attributes =
  user_attributes.each do |attributes|
   user= User.new(attributes)
   user.save
+end
+
+child_attributes =
+  [
+    { first_name: 'Brian', last_name: 'White', dob: Date.parse('01/03/2015'), gender: 'male', user_id: 2 },
+    { first_name: 'Julia', last_name: 'White', dob: Date.parse('12/10/2013'), gender: 'female', user_id: 2 },
+    { first_name: 'Tony', last_name: 'Black', dob: Date.parse('03/12/2009'), gender: 'male', user_id: 3 },
+  ]
+  child_attributes.each do |attributes|
+    child = Child.new(attributes)
+    child.save
 end

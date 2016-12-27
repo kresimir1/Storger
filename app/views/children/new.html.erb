@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="small-9 column">
+    
+    <%= form_for :child, url: children_path do |f| %>
+
+      <% if @child.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@child.errors.count, "error") %> prohibited
+            this account from being saved:
+          </h2>
+          <ul>
+            <% @child.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-inputs">
+        <div class="small-5">
+          <%= f.hidden_field :user_id %>
+
+          <p>
+            <%= f.label :first_name, "First Name" %><br>
+            <%= f.text_field :first_name %>
+          </p>
+          <p>
+            <%= f.label :last_name, "Last Name" %><br>
+            <%= f.text_field :last_name %>
+          </p>
+          <p>
+            <%= f.label :dob, "Date Of Birth" %><br>
+            <%= f.date_field :dob %>
+          </p>
+
+          <p>
+            <span class="option">Male </span><%= f.radio_button :gender, "male" %></br>
+            <span class="option">Female </span><%= f.radio_button :gender, "female" %></br>
+          </p>
+
+          <p>
+            <%= f.submit "Add Storgie", class: 'button success'%>
+          </p>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
