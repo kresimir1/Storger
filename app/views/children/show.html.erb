@@ -6,6 +6,7 @@
     <ul>
       <li><p><%= @child.first_name %> <%= @child.last_name %></p>
           <p>Date Of Birth: <%= @child.dob %></p>
+          <p>Age: <%= @age %></p>
           <p>Gender: <%= @child.gender %></p>
           <p><%= link_to 'Edit', edit_child_path%></p>
           <p><%= link_to 'Delete', @child,

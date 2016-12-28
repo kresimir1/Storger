@@ -25,11 +25,9 @@ feature 'list children belonging to the user on the children index page', %Q{
     expect(page).to have_link('Children')
     click_link 'Children'
     expect(page).to have_content('Brian White')
-    expect(page).to have_content('Date Of Birth: 2015-03-01')
-    expect(page).to have_content('Gender: male')
+    expect(page).to have_content('Age: 1 yr.')
     expect(page).to have_content('Julia White')
-    expect(page).to have_content('Date Of Birth: 2013-10-12')
-    expect(page).to have_content('Gender: female')
+    expect(page).to have_content('Age: 3 yr.')
 
   end
 end

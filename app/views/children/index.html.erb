@@ -7,8 +7,7 @@
     <% @children.each do |child| %>
     <ul>
       <li><p><%=link_to child.first_name + " " + child.last_name, child%></p>
-          <p>Date Of Birth: <%= child.dob %></p>
-          <p>Gender: <%= child.gender %></p>
+          <p>Age: <%= child.age(child.dob) %></p>
       </li>
     </ul>
     <% end %>

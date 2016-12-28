@@ -8,6 +8,7 @@ class ChildrenController < ApplicationController
   def show
     @user = User.find(current_user.id)
     @child = Child.find(params[:id])
+    @age = @child.age(@child.dob)
   end
 
   def new
