@@ -1,0 +1,30 @@
+<h3><%=@user.first_name%> <%=@user.last_name%></h3>
+<h1>Immunization Scheduler</h1>
+<p>Note: The flu vaccine is recommended once a year for kids 6 months and older.
+  Two doses are required if the child is receiving the vaccine for the first time.</p>
+
+<% if @children.nil? %>
+  <p>You have to add a child account to your profile before we can create immunization schedule!</p>
+<% else %>
+  <ul class="row large-up-2">
+      <% @children.each do |child| %>
+          <li class="column column-block">
+            <div class="transparent-box">
+            <h5><%=link_to child.first_name + " " + child.last_name, child%></h5>
+            <p>Date Of Birth: <%= child.dob %></p>
+            <% date = "" %>
+            <% @vaccines.each do |vaccine| %>
+              <% if date != vaccine.vaccine_date(child.dob) %>
+                <% date = vaccine.vaccine_date(child.dob) %>
+                <h6 style="font-weight: bold;">
+                  <br>
+                  <%= date %>
+                </h6>
+              <% end %>
+              <p> <%=link_to vaccine.title, vaccine %> (<%= vaccine.timeframe %>)</p>
+            <% end %>
+            </div>
+          </li>
+      <% end %>
+  </ul>
+<% end %>

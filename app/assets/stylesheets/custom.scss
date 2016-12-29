@@ -68,3 +68,14 @@ body#background {
     right: 0;
     height: 30%;
 }
+
+div.transparent-box {
+    border-radius: 25px;
+    margin: 60px;
+    background-color: #ffffff;
+
+    border: 1px solid orange;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    padding: 25px;
+}
