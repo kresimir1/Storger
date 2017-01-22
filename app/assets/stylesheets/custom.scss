@@ -9,9 +9,10 @@
      color: white;
 }
 
-#homepage1 input{
-  border-radius: 10px;
+#homepage1.notice {
+  color: white;
 }
+
 abbr[title="required"] {
   display: none;
 }
@@ -78,4 +79,9 @@ div.transparent-box {
     opacity: 0.6;
     filter: alpha(opacity=60); /* For IE8 and earlier */
     padding: 25px;
+}
+
+.comments {
+  font-size: 0.5em;
+  border-width: medium;
 }

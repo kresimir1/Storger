@@ -1,0 +1,41 @@
+
+<h1>Editing question</h1>
+
+<%= form_for :question, url: question_path(@question), method: :patch do |f| %>
+
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h4>
+        <%= pluralize(@question.errors.count, "error") %> prohibited
+        this topic from being saved:
+      </h4>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-inputs">
+    <div class="small-5">
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+    </div>
+    <div class="large-5">
+      <p>
+        <%= f.label :description %><br>
+        <%= f.text_area :description, rows: 6 %>
+      </p>
+    </div>
+  </div>
+  <div class="form-actions">
+      <p>
+        <%= f.button 'Submit', class: 'button success round small' %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to 'Back', questions_path %>
+  </div>

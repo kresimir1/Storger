@@ -6,38 +6,45 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
-# user_attributes =
-# [{
-#    first_name: 'Admin',
-#    last_name: 'Adminic',
-#    email: 'admin@gmail.com',
-#    role: 'admin',
-#    password: 'admin1' },
-#   { first_name: 'John',
-#     last_name: 'White',
-#     email: 'john@gmail.com',
-#     password: 'johnpassword'},
-#   {
-#     first_name: 'Amanda',
-#     last_name: 'Black',
-#     email: 'amanda@gmail.com',
-#     password: 'amandapassword'
-#  }]
-#  user_attributes.each do |attributes|
-#   user= User.new(attributes)
-#   user.save
-# end
-#
-# child_attributes =
-#   [
-#     { first_name: 'Brian', last_name: 'White', dob: Date.parse('01/03/2015'), gender: 'male', user_id: 2 },
-#     { first_name: 'Julia', last_name: 'White', dob: Date.parse('12/10/2013'), gender: 'female', user_id: 2 },
-#     { first_name: 'Tony', last_name: 'Black', dob: Date.parse('03/12/2009'), gender: 'male', user_id: 3 },
-#   ]
-#   child_attributes.each do |attributes|
-#     child = Child.new(attributes)
-#     child.save
-# end
+user_attributes =
+[{
+   first_name: 'Nancy',
+   last_name: 'Sinatra',
+   email: 'nancy@gmail.com',
+   password: 'nancypassword' },
+  { first_name: 'John',
+    last_name: 'White',
+    email: 'test@example.com',
+    password: 'password'},
+  {
+    first_name: 'Amanda',
+    last_name: 'Black',
+    email: 'amanda@gmail.com',
+    password: 'amandapassword'
+ },
+ {
+    first_name: 'Admin',
+    last_name: 'Adminic',
+    email: 'admin@gmail.com',
+    role: 'admin',
+    password: 'admin1' }]
+ user_attributes.each do |attributes|
+  user= User.new(attributes)
+  user.save
+end
+
+child_attributes =
+  [
+    { first_name: 'Franky', last_name: 'Sinatra', dob: Date.parse('01/04/2015'), gender: 'male', user_id: 1 },
+    { first_name: 'Izabella', last_name: 'Sinatra', dob: Date.parse('12/11/2013'), gender: 'female', user_id: 1 },
+    { first_name: 'Brian', last_name: 'White', dob: Date.parse('01/03/2015'), gender: 'male', user_id: 2 },
+    { first_name: 'Julia', last_name: 'White', dob: Date.parse('12/10/2013'), gender: 'female', user_id: 2 },
+    { first_name: 'Tony', last_name: 'Black', dob: Date.parse('03/12/2009'), gender: 'male', user_id: 3 },
+  ]
+  child_attributes.each do |attributes|
+    child = Child.new(attributes)
+    child.save
+end
 
 hepatitis_b = "The hepatitis B vaccine (HepB) protects your child against the
 hepatitis B virus, which can lead to liver damage and even death. Hepatitis B
@@ -183,4 +190,96 @@ vaccine_attributes =
   vaccine_attributes.each do |attributes|
     vaccine = Vaccine.new(attributes)
     vaccine.save
+end
+
+question_attributes =
+  [{
+     title: "Do you prepare a separate meal for your kids?",
+     description: "Do you make separate meals for your kids or do they eat the same thing that the grownups eat?
+     I find that I am missing more flavorful food in favor of having everyone eat the same meals. I tend to make it a little simpler and blander, so kids can eat it too.
+     What do other people do? Same food? Totally separate food? Give the kids the spicy stuff too? :P",
+     user_id: 1
+  },
+  {
+    title: "How much shoud I spend on a baby carrier?",
+    description: 'I have be searching for the best carrier for my baby for a while now and there seems to be so many different kinds and reviews. Any suggestions?
+    Also I am considering of buying a used one. Any opinions on that?',
+    user_id: 2},
+  {
+    title: 'What are good ways to get an 7 year old boy into sports activities?',
+    description: "I have an 8 years old boy, whom doesn't show any interest in sports or any other activities except his PS3, tablet and TV.
+    I have been trying for the last three years (talking to him, proposing to buy him new games, and finally threatening) to get him into, football (Soccer), basketball but in vain.
+    I also tried to get him into taekwondo so that he could stand up for himself in front of bullies but it with no success any idea would be extremely appreciate it.
+    Please don't tell me that he doesn't need I used to be bullied and I do not want him to go through what I went through. BTW he is a shy boy.",
+    user_id: 3},
+    {
+   title: 'Need some feedback on an idea I have',
+   description: "Hi, I'm thinking to open a new birthdays place.
+   Escape room for little kids, between 6-10 years old... at the end of the 'adventure', there is a room for the cake with balloons and snacks..
+   Please let me know what do you think about this idea and if you will celebrate your kids birthday at a place like this?",
+   user_id: 2}]
+
+ question_attributes.each do |attributes|
+  question= Question.new(attributes)
+  question.save
+end
+
+answer_attributes =
+  [{
+     body: "Same food. How else will they learn about different foods?
+     They don't like something? They can have more of the other items.
+     Most of us grew up when our parents would never have dreamed of cooking separately for us
+     (except when the grown-ups got great steaks, and we got burgers, but that''s another story.)
+     Doesn't anyone remember having to stay at the table without dessert until we ate our peas?
+     Depending on ages, you might tone down very spicy things, but my kid loved all things Mexican from an early age,
+     and gradually took it hotter and hotter.",
+     user_id: 2,
+     question_id: 1
+  },
+  {
+    body: "Make what you want to eat. If the kids are hungry, they'll eat it.
+    A friend told me years ago that she would tell her kids if they turned up their noses at dinner,
+    'You know where the cereal is.' It works :-)",
+    user_id: 3,
+    question_id: 1 },
+  {
+    body: "I suggest that when it comes to slings and baby carriers, you do need
+    to pay a little bit more for the best product. None of our Best Buys is generally available for less than $80",
+    user_id: 1,
+    question_id: 2 },
+  {
+    body: "Try to find a baby carrier with multiple carrying positions for maximum comfort
+    for you and your baby as he or she grows.",
+    user_id: 3,
+    question_id: 2 },
+  {
+     body: "A great way to teach kids self-defense and get them active and on their feet is Karate.
+     Karate is a form of martial arts that improves physical performance and hand-eye coordination.
+     Additionally, children seem to improve time management, focus and attentiveness.
+     The program that really impacted my younger brother is Kids Karate Classes.
+     Since starting the program he's no longer getting bullied and has made honor roll every marking period.
+     The ear to ear grin that he gives me before going to school is priceless.",
+     user_id: 1,
+     question_id: 3
+  },
+  {
+    body: "If your kid is not interested in sports, then why push that? That will only turn him off.
+    Try something else. And being into sports won't stop him from being bullied.",
+    user_id: 2,
+    question_id: 3 },
+  {
+    body: "Take away his devices or limit the time on them.
+    Get him and a friend together to do a sport - it sicks to join a team when you don't know anyone.
+    Let them choose what to do.
+    Or maybe their sport is going to the playground, go to the swimming pools or beach, or skateboarding..",
+    user_id: 4,
+    question_id: 3 },
+  {
+    body: "Sounds great!!! Count me in :):):)",
+    user_id: 3,
+    question_id: 4 }]
+
+ answer_attributes.each do |attributes|
+  answer = Answer.new(attributes)
+  answer.save
 end

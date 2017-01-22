@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :children
   resources :vaccines
+  resources :questions do
+    resources :answers
+  end
 end

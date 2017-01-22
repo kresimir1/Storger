@@ -1,0 +1,32 @@
+
+<div class="small-3" >
+  <h1>Parents Forum</h1>
+  <%= form_tag(questions_path, method: "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Topics" %>
+      <%= submit_tag "Search", class: 'button success round small' %>
+  <% end %>
+  <% if !@questions.present? %>
+    <p>There are no topics containing the term(s) <%= params[:search] %>.</p>
+  <% end %>
+</div>
+
+<div class="transparent-box">
+  <table >
+    <tr>
+      <th>
+        <h3>Topics</h3>
+        <h6><%= link_to 'New Topic', new_question_path %></h6>
+      </th>
+    </tr>
+
+    <% @questions.each do |question| %>
+      <tr>
+        <td>Posted by <%= question.user.first_name %>
+        <p><%= question.created_at.strftime("%m-%d-%Y") %></p></td>
+        <td><%=link_to question.title, question %></td>
+        <td><%= question.description %></td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>
